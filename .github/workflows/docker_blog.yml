@@ -32,3 +32,10 @@ jobs:
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Verify
         run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Cache Docker Image Layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
