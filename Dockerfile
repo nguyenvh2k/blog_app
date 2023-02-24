@@ -13,4 +13,4 @@ FROM tomcat:9.0
 # Copy source files to tomcat folder structure
 COPY --from=build /home/app/target/blogapp-1.0.war /usr/local/tomcat/webapps/ROOT.war
 
-EXPOSE 80
+EXPOSE 8080
