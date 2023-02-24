@@ -1,0 +1,7 @@
+  version: "3.9" #version of docker-compose
+  services:
+    web:
+      container_name: tomcat
+      build: .
+      ports:
+        - "8080:8080"
